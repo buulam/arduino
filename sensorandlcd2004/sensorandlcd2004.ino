@@ -11,15 +11,25 @@ const int LCD_ROWS = 4;
 const int trigPin = 5;
 const int echoPin = 6;
 
+int led = 12;
+int led2 = 4;
+int led3 = 3;
+int brightness = 250;  // how bright the LED is
+int fadeAmount = 5;  // how many points to fade the LED by
+
 long duration;
 int distanceCm, distanceInch;
 
 void setup() {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
+  pinMode(led, OUTPUT);
 }
 
 void loop() {
+  analogWrite(led, 0);
+  analogWrite(led2, 0);
+  analogWrite(led3, 0);
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
@@ -40,6 +50,13 @@ void loop() {
   if (distanceCm < 5) {
     lcd.setCursor(0, 3);
     lcd.print("Hello Stella");
+    analogWrite(led, brightness);
+    }
+    else if (distanceCm < 10) {
+        analogWrite(led2, brightness);
+    }
+    else if (distanceCm < 20) {
+      analogWrite(led3, brightness);
   }
-  delay(500);
+  delay(100);
   }
