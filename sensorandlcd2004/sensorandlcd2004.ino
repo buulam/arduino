@@ -1,3 +1,9 @@
+/*
+Buu Lam 
+Basic demo app using the 20x04 LCD module with an Arduino Uno R3 based board 
+Leveraging an ultrasonic sensor for measuring distance
+Couple of simple LED lights are incorporated to illustrate basic condition statements
+*/
 #include <Wire.h>
 #include <hd44780.h>                       // main hd44780 header
 #include <hd44780ioClass/hd44780_I2Cexp.h> // i2c expander i/o class header
