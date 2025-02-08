@@ -14,9 +14,6 @@ Servo myservo;  // create servo object to control a servo
 const int LCD_COLS = 20;
 const int LCD_ROWS = 4;
 
-int led = 12;
-int led2 = 4;
-int led3 = 3;
 int brightness = 250;  // how bright the LED is
 int fadeAmount = 5;  // how many points to fade the LED by
 
@@ -24,13 +21,9 @@ int pos = 0;    // variable to store the servo position
 
 void setup() {
   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
-  pinMode(led, OUTPUT);
 }
 
 void loop() {
-  analogWrite(led, 0);
-  analogWrite(led2, 0);
-  analogWrite(led3, 0);
   lcd.begin(LCD_COLS, LCD_ROWS);
   lcd.backlight();
   lcd.clear();

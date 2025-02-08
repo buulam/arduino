@@ -32,9 +32,6 @@ hd44780_I2Cexp lcd; // declare lcd object: auto locate & config exapander chip
 const int LCD_COLS = 20;
 const int LCD_ROWS = 4;
 
-int led = 12;
-int led2 = 4;
-int led3 = 3;
 int brightness = 250;  // how bright the LED is
 int fadeAmount = 5;  // how many points to fade the LED by
 
@@ -50,13 +47,9 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   // initialize the pushbutton pin as an input:
   pinMode(buttonPin, INPUT);
-  pinMode(led, OUTPUT);
 }
 
 void loop() {
-  analogWrite(led, 0);
-  analogWrite(led2, 0);
-  analogWrite(led3, 0);
   lcd.begin(LCD_COLS, LCD_ROWS);
   lcd.backlight();
   lcd.clear();
